@@ -1,0 +1,15 @@
+# IDEs
+.vscode/
+.idea/
+
+# Python
+.venv/
+__pycache__/
+scripts/data/raw/*.json
+
+# Go
+backend/bin/
+backend/dist/
+
+# System
+.DS_Store
