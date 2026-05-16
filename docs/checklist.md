@@ -12,7 +12,7 @@
 - [x] Create `scripts/harvester.py` with rate-limiting logic.
 - [x] Implement idempotency check (skip existing files).
 - [x] Successfully fetch and store `0_hero_list.json`.
-- [ ] Successfully scrape matchup data for all 120+ heroes into `scripts/data/raw/`.
+- [x] Successfully scrape matchup data for all 120+ heroes into `scripts/data/raw/`.
 
 ## Phase 2: Data Processing (Python)
 - [ ] Create `scripts/processor.py` to aggregate raw JSON files.
