@@ -97,8 +97,23 @@ def harvest_all_matchups() -> None:
         print(f"failed heroes: {[h['localized_name'] for h in failed]}")
         print("re-run the script to retry them (idempotency will skip succeeded ones)")
 
+def harvest_hero_stats() -> None:
+    filename = "1_hero_stats.json"
+    path = RAW_DIR / filename
+
+    if path.exists():
+        print(f"skip: {path} already exists")
+        return
+    
+    hero_stats = fetch("/heroStats")
+    written = save_json(hero_stats, filename)
+    count = len(hero_stats) if isinstance(hero_stats, list) else "?"
+
+    print(f"wrote {written} (found {count} hero stats)")
+
 def main() -> None:
     harvest_hero_list()
+    harvest_hero_stats()
     harvest_all_matchups()
 
 if __name__ == "__main__":
