@@ -15,11 +15,11 @@
 - [x] Successfully scrape matchup data for all 120+ heroes into `scripts/data/raw/`.
 
 ## Phase 2: Data Processing (Python)
-- [ ] Create `scripts/processor.py` to aggregate raw JSON files.
-- [ ] Implement **Advantage Score** calculation:
+- [x] Create `scripts/processor.py` to aggregate raw JSON files.
+- [x] Implement **Advantage Score** calculation:
     - *Formula: (Matchup Win Rate) - (Hero Global Win Rate)*
-- [ ] Normalize hero names and IDs for Go ingestion.
-- [ ] Export final `backend/data/processed_meta.json`.
+- [x] Normalize hero names and IDs for Go ingestion.
+- [x] Export final `backend/data/processed_meta.json`.
 
 ## Phase 3: The Go Logic Engine (Backend)
 - [ ] Define Go `structs` (Hero, Matchup, Meta) in `internal/engine`.
