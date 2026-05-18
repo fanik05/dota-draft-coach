@@ -6,6 +6,7 @@
 .venv/
 __pycache__/
 scripts/data/raw/*.json
+backend/data/processed_meta.json
 
 # Go
 backend/bin/
