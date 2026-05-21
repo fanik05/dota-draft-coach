@@ -1,4 +1,4 @@
-.PHONY: setup scrape build run process
+.PHONY: setup scrape build run process draft
 
 setup:
 	@echo "Setting up environments..."
@@ -16,3 +16,7 @@ run-backend:
 process:
 	@echo "Processing raw data..."
 	cd scripts && uv run processor.py
+
+draft:
+	@echo "Running draft CLI..."
+	cd backend && go run ./cmd/draft $(ARGS)
