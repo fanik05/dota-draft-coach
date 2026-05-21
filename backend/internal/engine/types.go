@@ -7,6 +7,6 @@ type Hero struct {
 }
 
 type Meta struct {
-	Heros      map[string]Hero   `json:"heroes"`
-	Advantages map[string]float64 `json:"advantages"`
+	Heroes     map[string]Hero               `json:"heroes"`
+	Advantages map[string]map[string]float64 `json:"advantages"`
 }
