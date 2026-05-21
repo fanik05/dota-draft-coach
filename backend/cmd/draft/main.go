@@ -14,16 +14,25 @@ const (
 )
 
 func main() {
-	enemies := os.Args[1:]
+	args := os.Args[1:]
 
-	if len(enemies) == 0 {
-		log.Fatal("usage: draft <enemy_id1> <enemy_id2> ...")
+	if len(args) == 0 {
+		log.Fatal("usage: draft <enemy> [<enemy> ...]\n  enemy: hero id or name (e.g. 14, \"Pudge\", \"crystal maiden\")")
 	}
 
 	meta, err := engine.Load(metaPath)
 
 	if err != nil {
 		log.Fatalf("load meta: %v", err)
+	}
+
+	enemies := make([]string, 0, len(args))
+	for _, arg := range args {
+		id, err := meta.FindHero(arg)
+		if err != nil {
+			log.Fatalf("resolve %q: %v", arg, err)
+		}
+		enemies = append(enemies, id)
 	}
 
 	suggestions := meta.Suggest(enemies)
