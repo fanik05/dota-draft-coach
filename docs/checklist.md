@@ -22,10 +22,10 @@
 - [x] Export final `backend/data/processed_meta.json`.
 
 ## Phase 3: The Go Logic Engine (Backend)
-- [ ] Define Go `structs` (Hero, Matchup, Meta) in `internal/engine`.
-- [ ] Implement JSON loader to hydrate the in-memory Map.
-- [ ] Build the scoring algorithm (summing advantages against the enemy lineup).
-- [ ] Create a basic CLI entry point in `main.go` to test logic.
+- [x] Define Go `structs` (Hero, Matchup, Meta) in `internal/engine`.
+- [x] Implement JSON loader to hydrate the in-memory Map.
+- [x] Build the scoring algorithm (summing advantages against the enemy lineup).
+- [x] Create a basic CLI entry point in `main.go` to test logic.
 
 ## Phase 4: Interface & Quality Assurance
 - [ ] Implement a clean CLI with hero name autocomplete/search.
