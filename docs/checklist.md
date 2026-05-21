@@ -28,6 +28,6 @@
 - [x] Create a basic CLI entry point in `main.go` to test logic.
 
 ## Phase 4: Interface & Quality Assurance
-- [ ] Implement a clean CLI with hero name autocomplete/search.
-- [ ] Write unit tests for the scoring math in Go.
-- [ ] (Optional) Wrap the engine in a REST API for future frontend use.
+- [x] Implement a clean CLI with hero name autocomplete/search.
+- [x] Write unit tests for the scoring math in Go.
+- [x] (Optional) Wrap the engine in a REST API for future frontend use.
