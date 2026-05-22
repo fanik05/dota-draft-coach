@@ -16,8 +16,9 @@ A high-concurrency suggestion engine that provides optimal hero picks based on h
    - Ingests `processed_meta.json` into an in-memory `Map`.
    - **Logic:** Sums the advantage scores of the enemy team against all potential picks to find the "Counter Weight."
 4. **Interface:** 
-   - Initial Version: CLI (Command Line Interface).
-   - Future Version: REST API with React Frontend.
+   - **CLI:** `cmd/draft` for terminal use.
+   - **REST API:** `cmd/server` exposing `/suggest`, `/heroes`, `/health`.
+   - **Frontend:** React SPA in `/frontend` (in progress).
 
 ## Tech Stack
 - **Languages:** Python (Data Pipeline), Go (Logic Engine)

@@ -10,6 +10,7 @@ A hybrid **Go** and **Python** engine that calculates optimal hero counters usin
 ## 📂 Structure
 - `/backend`: Go logic and suggestion API.
 - `/scripts`: Python data harvester and processor.
+- `/frontend`: React SPA (Vite + TypeScript).
 - `/docs`: Architecture and roadmap.
 
 ## ⚡ Quick Start

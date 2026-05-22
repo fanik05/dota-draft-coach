@@ -31,3 +31,9 @@
 - [x] Implement a clean CLI with hero name autocomplete/search.
 - [x] Write unit tests for the scoring math in Go.
 - [x] (Optional) Wrap the engine in a REST API for future frontend use.
+
+## Phase 5: Frontend (React)
+- [x] Scaffold Vite + React + TypeScript project in `/frontend`.
+- [ ] Build hero picker UI (click portraits to add to enemy team).
+- [ ] Wire up `POST /suggest` and render top-N suggestions.
+- [ ] (Optional) Polish — loading states, error handling, deploy.
