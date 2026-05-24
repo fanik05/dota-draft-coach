@@ -1,4 +1,4 @@
-.PHONY: setup scrape build run process draft run-frontend
+.PHONY: setup scrape process draft run-backend run-frontend
 
 setup:
 	@echo "Setting up environments..."
