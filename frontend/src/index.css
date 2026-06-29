@@ -1,111 +1,142 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+@import "tailwindcss";
+@import "@fontsource/cinzel/400.css";
+@import "@fontsource/cinzel/600.css";
+@import "@fontsource/cinzel/700.css";
+@import "@fontsource/cinzel/900.css";
+@import "@fontsource/rajdhani/300.css";
+@import "@fontsource/rajdhani/400.css";
+@import "@fontsource/rajdhani/500.css";
+@import "@fontsource/rajdhani/600.css";
+@import "@fontsource/rajdhani/700.css";
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+@theme {
+  --font-display: "Cinzel", serif;
+  --font-sans: "Rajdhani", sans-serif;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --color-night-950: #050810;
+  --color-night-900: #0a101c;
+  --color-night-800: #111a2c;
+  --color-night-700: #1a2540;
+  --color-night-600: #243358;
+  --color-night-500: #344771;
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
+  --color-ember-400: #fde68a;
+  --color-ember-500: #facc15;
+  --color-ember-600: #d97706;
+  --color-ember-700: #b45309;
+
+  --color-blood-500: #e11d48;
+  --color-blood-600: #be123c;
+  --color-blood-700: #9f1239;
+
+  --color-attr-str: #ef4444;
+  --color-attr-agi: #34d399;
+  --color-attr-int: #38bdf8;
+  --color-attr-all: #c084fc;
+
+  --color-parchment: #f4e3b2;
+  --color-parchment-dim: #b8a572;
+}
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-night-950 text-parchment font-sans antialiased overflow-x-hidden;
+    background-image:
+      radial-gradient(ellipse 80% 60% at 20% -20%, rgba(217, 119, 6, 0.18), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 110% 110%, rgba(225, 29, 72, 0.12), transparent 55%),
+      linear-gradient(180deg, #050810 0%, #0a101c 100%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: var(--color-ember-600);
+    color: var(--color-night-950);
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.05em;
   }
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+  .text-glow-ember {
+    text-shadow:
+      0 0 16px rgba(217, 119, 6, 0.55),
+      0 0 32px rgba(217, 119, 6, 0.3);
   }
-}
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+  .text-glow-blood {
+    text-shadow:
+      0 0 14px rgba(225, 29, 72, 0.6),
+      0 0 28px rgba(225, 29, 72, 0.35);
   }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
+
+  .panel {
+    @apply rounded-2xl border border-night-700/70 bg-night-900/70 backdrop-blur-sm;
+    box-shadow:
+      inset 0 1px 0 rgba(244, 227, 178, 0.05),
+      0 20px 60px -20px rgba(0, 0, 0, 0.8);
   }
-}
-p {
-  margin: 0;
-}
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
+  .ornate-divider {
+    position: relative;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-ember-600) 35%,
+      var(--color-ember-500) 50%,
+      var(--color-ember-600) 65%,
+      transparent
+    );
+  }
+  .ornate-divider::before,
+  .ornate-divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: var(--color-ember-500);
+    transform: translateY(-50%);
+    box-shadow: 0 0 12px var(--color-ember-500);
+  }
+  .ornate-divider::before { left: calc(50% - 80px); }
+  .ornate-divider::after  { left: calc(50% + 74px); }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+  @keyframes ember-drift {
+    0%   { transform: translateY(0) translateX(0); opacity: 0; }
+    10%  { opacity: 0.8; }
+    100% { transform: translateY(-110vh) translateX(40px); opacity: 0; }
+  }
+  .ember-particle {
+    position: absolute;
+    bottom: -10px;
+    width: 3px;
+    height: 3px;
+    border-radius: 9999px;
+    background: var(--color-ember-500);
+    box-shadow: 0 0 8px var(--color-ember-500);
+    animation: ember-drift linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position:  200% 0; }
+  }
+  .shimmer {
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(244, 227, 178, 0.15) 50%,
+      transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2.6s linear infinite;
+  }
 }

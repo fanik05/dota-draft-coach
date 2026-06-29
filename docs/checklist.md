@@ -34,6 +34,10 @@
 
 ## Phase 5: Frontend (React)
 - [x] Scaffold Vite + React + TypeScript project in `/frontend`.
-- [ ] Build hero picker UI (click portraits to add to enemy team).
-- [ ] Wire up `POST /suggest` and render top-N suggestions.
-- [ ] (Optional) Polish — loading states, error handling, deploy.
+- [x] Build hero picker UI (click portraits to add to enemy team).
+- [x] Wire up `POST /suggest` and render top-N suggestions.
+- [x] (Optional) Polish — loading states, error handling, deploy.
+    - Tailwind v4 theme with custom Dota-inspired palette (night/ember/blood/attr colors).
+    - Typography via Cinzel (display) + Rajdhani (sans), self-hosted with `@fontsource`.
+    - Framer Motion (`motion`) for hover/tap, layout, AnimatePresence, score-bar springs, drifting ember particles.
+    - Vite dev proxy `/api → :8080` (no CORS needed in dev).
