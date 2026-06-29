@@ -5,7 +5,7 @@ A hybrid **Go** and **Python** engine that calculates optimal hero counters usin
 ## 🛠 Tech Stack
 - **Backend:** Go (scoring engine + REST API)
 - **Data Pipeline:** Python (ETL & statistical normalization)
-- **Frontend:** React + TypeScript (Vite)
+- **Frontend:** React + TypeScript (Vite), Tailwind v4, Framer Motion (`motion`), self-hosted Cinzel + Rajdhani via `@fontsource`
 - **Data Source:** OpenDota API
 
 ## 📂 Structure
@@ -22,7 +22,7 @@ Prerequisites: [uv](https://docs.astral.sh/uv/) (`brew install uv`), Go, and Nod
 3. **Process:** `make process` — aggregates raw data into `backend/data/processed_meta.json`.
 4. **Try the CLI:** `make draft ARGS='pudge "crystal maiden" sven'` — top-10 counter picks for that enemy team.
 5. **Run the API:** `make run-backend` — starts the HTTP server on `:8080`.
-6. **Run the frontend:** `make run-frontend` — starts the Vite dev server on `:5173`.
+6. **Run the frontend:** `make run-frontend` — starts the Vite dev server on `:5173`. (Run `make run-backend` in another terminal first; the frontend proxies `/api/*` to `:8080`.)
 
 ## 🔌 REST API
 

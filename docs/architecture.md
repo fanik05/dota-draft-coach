@@ -18,7 +18,7 @@ A high-concurrency suggestion engine that provides optimal hero picks based on h
 4. **Interface:** 
    - **CLI:** `cmd/draft` for terminal use.
    - **REST API:** `cmd/server` exposing `/suggest`, `/heroes`, `/health`.
-   - **Frontend:** React SPA in `/frontend` (in progress).
+   - **Frontend:** React SPA in `/frontend` — Vite + TypeScript, Tailwind v4 theme, Framer Motion animations. Talks to the API via Vite's `/api` dev proxy (no CORS shim needed in dev).
 
 ## Tech Stack
 - **Languages:** Python (Data Pipeline), Go (Logic Engine)
